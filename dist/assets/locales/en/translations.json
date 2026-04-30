@@ -1,0 +1,12 @@
+{
+  "view_text": "Biosignals Plux EMG/ECG/EDA Signal Visualization",
+  "preview_text": "Biosignals Plux - Biomedical Signals",
+  "property.sensor_type": "Sensor Type",
+  "property.sensor_ecg": "ECG Sensor",
+  "property.sensor_emg": "EMG Sensor", 
+  "property.sensor_eda": "EDA Sensor",
+  "property.enable_region_selection": "Enable Region Selection",
+  "property.auto_calculate_metrics": "Auto Calculate Metrics",
+  "property.y_axis_min": "Y Axis Minimum",
+  "property.y_axis_max": "Y Axis Maximum"
+}
