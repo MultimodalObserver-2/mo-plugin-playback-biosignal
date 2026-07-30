@@ -169,9 +169,17 @@ function BiosignalsPluxView({
     if (isPlaying) {
       lastRealTimeRef.current = performance.now();
       rafIdRef.current = requestAnimationFrame(tick);
-    } else if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
+    } else {
+      if (rafIdRef.current !== null) {
+        cancelAnimationFrame(rafIdRef.current);
+        rafIdRef.current = null;
+      }
+    }
     return () => {
-      if (rafIdRef.current) cancelAnimationFrame(rafIdRef.current);
+      if (rafIdRef.current !== null) {
+        cancelAnimationFrame(rafIdRef.current);
+        rafIdRef.current = null;
+      }
     };
   }, [isPlaying]);
   const handleZoom = (direction) => {
@@ -486,9 +494,7 @@ function BiosignalsPluxView({
             })]
           })]
         })
-      }) : /* @__PURE__ */ jsx$2("p", {
-        children: "Sin datos"
-      }), /* @__PURE__ */ jsxs$1("div", {
+      }) : /* @__PURE__ */ jsx$2("p", {}), /* @__PURE__ */ jsxs$1("div", {
         style: {
           display: "flex",
           flexDirection: "column",
@@ -508,8 +514,7 @@ function BiosignalsPluxView({
           style: {
             ...btnStyle,
             background: "#f0ad4e"
-          },
-          children: "Cancelar Selección"
+          }
         })]
       })]
     })]
@@ -575,12 +580,10 @@ class BiosignalsPlayback extends PlaybackPlugin {
   getPreview() {
     return /* @__PURE__ */ jsx(BiosignalsPluxPreview, {});
   }
-  // Solo aceptamos JSON, que es lo que genera tu plugin de captura
   validExtensions() {
     return ["json"];
   }
   //@ts-ignore
-  // Validación básica para asegurar que el JSON tiene la estructura correcta
   validateCaptureDescriptor(descriptor) {
     return true;
   }

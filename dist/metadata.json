@@ -2,11 +2,11 @@
     "id": "biosignalsplux-playback",
     "name": "Biosignals Plux Playback",
     "description": "A plugin that visualizes and analyzes Biosignals Plux EMG/ECG/EDA signals with real-time metrics and region selection.",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "publisher": {
-        "id": "biosignalsplux",
-        "name": "Biosignals Plux",
-        "url": "https://biosignalsplux.com"
+        "id": "interaction-lab",
+        "name": "InTeractiOn Lab",
+        "url": "https://interaction-lab.info"
     },
     "repository": "https://github.com/MultimodalObserver-2/",
     "author": {
